@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38" height="38" viewBox="0 0 38 38">
+  <defs>
+    <clipPath id="clip-runtime">
+      <rect width="38" height="38"/>
+    </clipPath>
+  </defs>
+  <g id="runtime" clip-path="url(#clip-runtime)">
+    <g id="iconfinder__computer_laptop_electronics_notebook_macbook_device_work_4213407" transform="translate(-1 -26)">
+      <rect id="Прямоугольник_123" data-name="Прямоугольник 123" width="38" height="4" rx="2" transform="translate(1 58)" fill="#297923"/>
+      <path id="Контур_83" data-name="Контур 83" d="M11,54.753H43.279V31H11Zm2.436-21.316H40.843v18.88H13.436Z" transform="translate(-6.955)" fill="#297923"/>
+    </g>
+    <rect id="Прямоугольник_124" data-name="Прямоугольник 124" width="38" height="2" transform="translate(0 32)" fill="#297923"/>
+  </g>
+</svg>

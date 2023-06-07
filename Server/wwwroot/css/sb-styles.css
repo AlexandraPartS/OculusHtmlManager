@@ -1,0 +1,673 @@
+/*! *****************************************************************************
+    Copyright (c) NTC-Vulkan. All rights reserved.
+    
+    Главный файл CSS.
+    Содержание (последовательность соответствующая): 
+    1. фон (размер, цвет, тень). Базовое
+    2. шрифты (размер, цвет)
+    3. лид: корректировки
+    4. элементы: а) скорректированный тумблер
+    5. Footer
+    6. БЛОКИ
+        1) Аккордеон
+            Общее
+            Accordion Header
+            Accordion Body
+            Accordion Body: common list
+            Accordion Body: table: main reboot
+            Accordion Body: table: 1. imbedded buttons  - eye, pencil etc., 2. Alerts
+            Accordion Body: main dialog buttons
+            Accordion special: icons*
+        2) Вне аккордеона (блок на базе блока аккордеона)
+    7. Preloader
+    8. VideoStream
+
+    ***************************************************************************** */
+
+
+/*1. фон (размер, цвет, тень). Базовое                               */
+
+html,
+body,
+main,
+body.list {
+    height: 100%;
+    margin: 0;
+}
+
+html {
+    overflow: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #336b20, #317221, #2d7a23, #278125, #1f8927);
+    background-attachment: fixed;
+}
+
+.sb {
+    background-color: #fff;
+    box-shadow: 0 0 2rem rgb(0 0 0 / 20%);
+    padding: 2.5rem 1.75rem 3rem 1.75rem;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/*********************************************************************/
+
+
+/*2. Шрифты (размер, цвет)                                           */
+
+body,
+th,
+.btn,
+p,
+.form-control {
+    font-size: 0.9rem;
+}
+
+body,
+th {
+    color: #4D5154;
+}
+
+th {
+    font-weight: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.lead {
+    color: #212529;
+}
+
+
+/* .list-group-item:not(.list-group-item.lead),  a.btn, {
+    /* font-size: 0.9rem; *
+} */
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.lead {
+    font-size: 1.04rem;
+}
+
+.border-transparent {
+    border-color: transparent !important;
+}
+
+
+/*********************************************************************/
+
+
+/*3. Лид: корректировки                                              */
+
+.list-group-item.lead {
+    padding: 0.125rem 0 0 0;
+    border: none;
+}
+
+.bulleted-style {
+    list-style-position: inside;
+}
+
+.bulleted-style .list-group-item {
+    display: list-item;
+}
+
+
+/*********************************************************************/
+
+
+/*4. Элементы: а) скорректированный тумблер                          */
+
+.form-check-input:checked {
+    background-color: #297923;
+    border-color: #297923;
+}
+
+.form-switch .form-check-input:focus {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23cccccc'/%3e%3c/svg%3e");
+}
+
+.form-switch .form-check-input:checked {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23ffffff'/%3e%3c/svg%3e");
+}
+
+.form-check-input:focus {
+    border-color: #9AD195;
+    box-shadow: 0 0 0 0.25rem rgb(154 210 149 / 25%);
+}
+
+
+/*********************************************************************/
+
+
+/*5. Footer                                                          */
+
+.footer a {
+    font-weight: 600;
+    color: #495057;
+}
+
+.footer a:hover,
+.footer a:focus {
+    color: #06880a;
+}
+
+.footnote {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    line-height: 1.375;
+    margin-top: -1.3rem;
+    margin-bottom: 2.75rem;
+}
+
+
+/*********************************************************************/
+
+
+/* 6. БЛОКИ                                                             */
+
+
+/*********************************************************************/
+
+
+/* 6.1. БЛОК АККОРДЕОНА                                                   */
+
+
+/* Общее                                                             */
+
+
+/*Accordion Header*/
+
+.accordion-button {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 1.25rem 1rem 1.25rem 0.5rem;
+}
+
+.accordion-header p,
+.list-group p {
+    margin-bottom: 0;
+}
+
+.accordion-header p {
+    font-weight: 400;
+    margin-top: 0.35rem;
+}
+
+.imanagebl {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: .375rem 1.25rem;
+    margin-right: 1rem;
+}
+
+.accordion-button:hover {
+    background-color: #EEEEEE;
+}
+
+.accordion-button:focus {
+    border-color: #F6F8F3;
+    box-shadow: 0 0 0 0.15rem rgb(65 70 75 / 20%);
+}
+
+.accordion-button:not(.collapsed) {
+    color: #000000;
+    background-color: #f7f7f7;
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23D9D9D9'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:hover::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23B8B8B8'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%234F5051'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+
+/*This is modifying of bootsyrap v5.0.0-beta3*/
+
+.accordion-flush .accordion-collapse {
+    border-bottom-width: 1px;
+}
+
+
+/*Accordion Body*/
+
+.accordion-body {
+    padding: 1.75rem;
+}
+
+
+/*Accordion Body: common list*/
+
+.accordion .list-group-item {
+    padding: 0.25rem 1rem 0.25rem 0;
+    border: none;
+}
+
+.accordion .list-group-item {
+    background-color: transparent;
+}
+
+.accordion .list-group-item .ms-2 {
+    margin-left: 0.5rem !important;
+}
+
+
+/* .list-group-numbered {
+    list-style-type: none;
+    counter-reset: section;
+}
+.list-group-numbered>li::before {
+    content: counters(section, ".") ". ";
+    counter-increment: section;
+}
+ */
+
+
+/*Accordion Body: table: main reboot*/
+
+.accordion .table> :not(caption)>*>* {
+    padding: 0.75rem 1.125rem;
+}
+
+.accordion .table> :not(:last-child)> :last-child>* {
+    border-bottom: 0 !important;
+}
+
+.accordion table p {
+    margin: 0 !important;
+}
+
+select {
+    float: right;
+    font-size: 0.5em;
+    border: none;
+    color: silver;
+    opacity: 0.2;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+    background-color: transparent;
+}
+
+.btn,
+.form-control {
+    /* padding: 0.5rem 0.75rem; */
+    border-radius: 0rem;
+}
+
+
+/*Accordion Body: table: 1. imbedded buttons  - eye, pencil etc., 2. Alerts   */
+
+.input-group-text:hover {
+    background-color: #dde0e3;
+    cursor: pointer;
+}
+
+.ip-confirm,
+.ip-cancel {
+    background-image: url(../svg/check.svg);
+    background-repeat: no-repeat;
+    background-position: right calc(.445em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+    text-indent: -99999px;
+    overflow: hidden;
+    padding: .375rem 1.25rem;
+}
+
+.ip-cancel {
+    background-image: url(../svg/cancel.svg);
+}
+
+.ip-confirm:hover,
+.ip-cancel:hover {
+    background-image: url(../svg/check-hover.svg);
+}
+
+.ip-cancel:hover {
+    background-image: url(../svg/cancel-hover.svg);
+}
+
+.text-on {
+    color: #06880a !important;
+}
+
+.text-off {
+    color: #d63384 !important;
+}
+
+.text-start {
+    color: #c8cbce !important;
+}
+
+.errorstate {
+    color: #e00600 !important;
+    padding: 0.5rem 1.125rem 0.5rem 2.725rem;
+    background-image: url(../svg/error.svg);
+    background-repeat: no-repeat;
+    background-position: calc(0.725rem) center;
+    background-size: 1.175rem;
+    border: 1px solid #e00600;
+    background-color: #f8d7da;
+}
+
+.errorstatenode {
+    color: #ed5629 !important;
+    background-image: url(../svg/error.svg);
+    border: 1px solid #ff843e;
+    background-color: #ffd8c3;
+}
+
+.oktext {
+    color: #08a20d !important;
+    padding: 0.5rem 1.125rem 0.5rem 2.725rem;
+    background-image: url(../svg/success.svg);
+    background-repeat: no-repeat;
+    background-position: calc(0.725rem) center;
+    background-size: 1.175rem;
+    border: 1px solid #44b73c;
+    background-color: #e0f5e3;
+}
+
+.errorstate span {
+    display: block;
+}
+
+
+/*Accordion Body: main dialog buttons*/
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 2.125rem;
+}
+
+
+/*This is modifying the btn-primary colors but you could create your own .btn-something class as well*/
+
+
+/* .btn-primary-table {
+    color: #fff;
+    background-color: #0d6efd!important;
+    border-color: #0d6efd; /*set the color you want here*
+}
+
+.btn-primary-table:hover, .btn-primary-table:focus, .btn-primary-table:active, .btn-primary-table.active, .open>.dropdown-toggle.btn-primary-table {
+    color: #fff;
+    background-color: #0b5ed7!important;
+    border-color: #0a58ca; /*set the color you want here*
+}
+ */
+
+.btn-outline-secondary {
+    border-color: #d4d9de;
+}
+
+.btn-primary,
+.btn-primary.disabled {
+    background-color: #118c11;
+    border-color: #6EA41D;
+}
+
+.btn-outline-primary {
+    color: #198754;
+    border-color: #198754;
+}
+
+.btn-primary:hover,
+.btn-outline-primary:hover {
+    background-color: #167816;
+    border-color: #0a7b0a;
+    color: white;
+}
+
+.btn-primary:active,
+.btn-outline-primary:active {
+    background-color: #096709;
+    border-color: #045504;
+    color: white;
+}
+
+
+/*Accordion special: icons*/
+
+.networkset {
+    background-image: url(../svg/NetworkSettings.svg);
+}
+
+.servicesset {
+    background-image: url(../svg/Servicessettings.svg);
+}
+
+.accountset {
+    background-image: url(../svg/enter.svg);
+}
+
+.runtimeset {
+    background-image: url(../svg/runtime.svg);
+}
+
+
+/*********************************************************************/
+
+
+/* 6.2. Блок вне аккордеона (блок на базе блока аккордеона)               */
+
+
+/* .block-accordion-outside {
+    /* font-size: 0.9rem; *
+} */
+
+.block-accordion-outside th {
+    padding-left: 0 !important;
+}
+
+.block-accordion-outside .table-sm> :not(caption)>*>* {
+    padding: 0.4rem 0.25rem;
+}
+
+.block-accordion-outside .firsttable tr:first-child th {
+    width: 175px;
+}
+
+.block-accordion-outside .firsttable td {
+    padding-left: 1.375rem;
+    /* it's a padding for server img ( see class .server-confirm )*/
+}
+
+.block-accordion-outside .form-switch {
+    padding-left: 3em;
+}
+
+.block-accordion-outside .form-switch .form-check-input {
+    transform: scale(1.5);
+    margin-right: 1em;
+}
+
+.server-confirm {
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center left;
+    padding-left: 1.375rem;
+    margin-left: -1.375rem;
+}
+
+.server-confirm {
+    background-image: url(../svg/oculus-serverconnect.svg);
+}
+
+.server-confirm-none {
+    background-image: url(../svg/oculus-serverconnect-no.svg);
+}
+
+.secondtable {
+    min-width: 150px;
+}
+
+.secondtable td {
+    text-align: center;
+}
+
+.alert-danger {
+    background-color: red;
+}
+
+.vrglasses,
+.vrcontrollerleft,
+.vrcontrollerright {
+    background-image: url(../svg/vrglasses.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* background-size: calc(.75em + .375rem) calc(.75em + .375rem); */
+    text-indent: -99999px;
+    overflow: hidden;
+    /* padding: .375rem 1.25rem; */
+}
+
+.vrcontrollerleft {
+    background-image: url(../svg/vrcontrollerleft.svg);
+}
+
+.vrcontrollerright {
+    background-image: url(../svg/vrcontrollerright.svg);
+}
+
+iframe {
+    border: 1px solid black;
+    width: 100%;
+}
+
+.output {
+    background: #eee;
+}
+
+
+/*********************************************************************/
+
+
+/* 7. Preloader                                                     */
+
+.preloader {
+    /*fixed positioning*/
+    position: fixed;
+    /* position coordinates */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* element background color */
+    background: #ffffff;
+    /* place the block above all elements on the page (this value must be greater than that of any other positioned element on the page) */
+    z-index: 1001;
+}
+
+.preloader__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: #06880a;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    animation: preloader-bounce 2s infinite ease-in-out;
+}
+
+.preloader__item:last-child {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+}
+
+@keyframes preloader-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes preloader-bounce {
+    0%,
+    100% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+.loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+}
+
+.loaded .preloader {
+    display: none;
+}
+
+
+/* 8. VideoStream                                        */
+
+.streamtranslation {
+    width: 100%;
+    position: relative;
+    background: #000000;
+    aspect-ratio: 9/10;
+}
+
+.video-layer {
+    width: 200%;
+}
+
+.touch-layer {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.video {
+    position: relative;
+    overflow: hidden;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 9/10;
+}
+
+
+

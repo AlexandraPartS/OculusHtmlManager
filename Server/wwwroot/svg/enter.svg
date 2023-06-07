@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38" height="38" viewBox="0 0 38 38">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Контур_64" data-name="Контур 64" d="M0,0H29.864V29.241H15.877V22.3H.031Z" transform="translate(-3228.185 3306)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-enter">
+      <rect width="38" height="38"/>
+    </clipPath>
+  </defs>
+  <g id="enter" clip-path="url(#clip-enter)">
+    <g id="Группа_масок_2" data-name="Группа масок 2" transform="translate(3236.321 -3306)" clip-path="url(#clip-path)">
+      <g id="g2390" transform="translate(-3225.613 3307.495)">
+        <ellipse id="circle2373" cx="8.284" cy="8.139" rx="8.284" ry="8.139" transform="translate(4.028 0)" fill="none" stroke="#297923" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/>
+        <path id="path2385" d="M-1921.807-164.3h26.541m-26.541,0q-.041-.6-.041-1.209c0-8.564,5.96-15.506,13.311-15.506s13.311,6.942,13.311,15.506h0q0,.6-.04,1.209" transform="translate(1920.848 197.289)" fill="none" stroke="#297923" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/>
+      </g>
+    </g>
+    <g id="Прямоугольник_115" data-name="Прямоугольник 115" transform="translate(0 25)" fill="none" stroke="#297923" stroke-width="2.4">
+      <rect width="22" height="6" stroke="none"/>
+      <rect x="1.2" y="1.2" width="19.6" height="3.6" fill="none"/>
+    </g>
+    <g id="Прямоугольник_117" data-name="Прямоугольник 117" transform="translate(0 32)" fill="none" stroke="#297923" stroke-width="2.4">
+      <rect width="22" height="6" stroke="none"/>
+      <rect x="1.2" y="1.2" width="19.6" height="3.6" fill="none"/>
+    </g>
+  </g>
+</svg>

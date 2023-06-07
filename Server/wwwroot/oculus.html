@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VSOC control panel</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/stream.css">
+    <link rel="stylesheet" href="./css/sb-styles.css">
+    <script src="./jquery/jquery-3.5.1.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/oculus.js"></script>
+    <script src="./js/bundle.js"></script>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="preloader__row">
+            <div class="preloader__item"></div>
+            <div class="preloader__item"></div>
+        </div>
+    </div>
+    <main>
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="sb col-lg-6 col-md-8 mx-auto">
+                    <div class="pb-5">
+                        <h2>VSOC: панель мониторинга и управления</h2>
+                        <div>
+                            <p class="lead mb-0">Добро пожаловать! Здесь Вы можете:</p>
+                            <ul class="list-group bulleted-style">
+                                <li class="list-group-item lead">отслеживать состояние гарнитуры,</li>
+                                <li class="list-group-item lead">смотреть трансляцию с гарнитуры,</li>
+                                <li class="list-group-item lead">обновить пароль в SOC.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class='errorstate hidden' id='errormsg'></p>
+                    </div>
+
+                    <div class="block-accordion-outside pb-4">
+                        <h5 class="mb-4"> Характеристики гарнитуры Oculus</h5>
+                        <div class="currentvalbody row g-0 mb-2">
+                            <div class="firsttable col-12 col-sm-7 col-md-9 col-lg-9 me-auto">
+                                <table class="table table-sm table-borderless">
+                                    <thead></thead>
+                                    <tbody class='ptbody'>
+                                        <tr id=''>
+                                            <th scope="" class="">Подключение к серверу:</th>
+                                            <td id="serverstatus">
+                                            </td>
+                                        </tr>
+                                        <tr id=''>
+                                            <th scope="row">Модель:</th>
+                                            <td id="modelstatus">
+                                            </td>
+                                        </tr>
+                                        <tr id=''>
+                                            <th scope="row">IP:</th>
+                                            <td id="ipstatus">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="secondtable col-4 col-sm-3 col-md-3 col-lg-3 order-md-last">
+                                <table class="table table-sm table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th scope="" class="">Заряд на устройствах:</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class='ptbody row row-cols-3'>
+                                        <tr class="d-flex flex-column">
+                                            <td class="vrcontrollerleft">pic</td>
+                                            <td id="lcontroller-charge">
+                                            </td>
+                                        </tr>
+                                        <tr class="d-flex flex-column">
+                                            <td class="vrglasses">pic </td>
+                                            <td id="glasses-charge">
+                                            </td>
+                                        </tr>
+                                        <tr class="d-flex flex-column">
+                                            <td class="vrcontrollerright">pic</td>
+                                            <td id="rcontroller-charge">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="mb-3">Отключение режима сна</h6>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Не отключено</label>
+                            </div>
+                            <p>Отключение режима сна возможно только для текущего сеанса.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion accordion-flush pb-5">
+                        <div class="accordion-item mb-3">
+                            <h5 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button border-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <div>
+                                        <span class='imanagebl runtimeset'></span>
+                                    </div>
+                                    <div>
+                                        Работа в SOC
+                                        <p>Режим трансляции</p>
+                                    </div>
+                                </button>
+                            </h5>
+
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                                <div class="accordion-body">
+                                    <h6 class="mb-4"> Режим трансляции</h6>
+                                    <p>
+                                        Режим трансляции доступен в зависимости от типа соединения гарнитуры и сервера:
+                                    </p>
+                                    <ul class="list-group bulleted-style">
+                                        <li class="list-group-item ">
+                                            доступен при проводном соединении;
+                                        </li>
+                                        <li class="list-group-item ">
+                                            доступен при беспроводном соединении, если IP гарнитуры и сервера находятся в одной подсети.
+                                        </li>
+                                    </ul>
+
+                                    <div class="">
+                                        <div class='button-container'>
+                                            <a id="translation-open" class="col-md-5 btn btn-primary           d-flex flex-wrap align-content-center justify-content-center me-3" role="button">Включить трансляцию</a>
+                                            <a id="translation-cancel" class="col-md-4 btn btn-outline-secondary d-flex flex-wrap align-content-center justify-content-center disabled" role="button">Отключить трансляцию</a>
+                                        </div>
+                                        <div id="streamtranslation" class="streamtranslation d-flex flex-column my-4">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h5 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button border-bottom border-top-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#network" aria-expanded="false" aria-controls="network" id="btn-network">
+                                    <div>
+                                        <span class='imanagebl accountset'></span>
+                                    </div>
+                                    <div>
+                                        Учетная запись
+                                        <p>Учетные записи для входа в SOC</p>
+                                    </div>
+                                </button>
+                            </h5>
+
+                            <div id="network" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo">
+                                <div class="accordion-body">
+                                    <h6 class="mb-4">Учетная запись для входа в VSOC</h6>
+                                    <p>Вы можете изменить данные вашей учетной записи при входе в VSOC.</p>
+                                    <div class="ipblock mb-5">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                </tr>
+                                            </thead>
+                                            <tbody class='passbody border-transparent'>
+
+                                                <tr id=''>
+                                                    <th class='align-middle'>
+                                                        <p class=''>Текущий логин</p>
+                                                    </th>
+                                                    <td class='align-middle'>
+                                                        <div class='input-group'>
+                                                            <input type='password' class='passholder form-control' id='' placeholder='Пароль' readonly>
+                                                            <span class='eye-open input-group-text' data-bs-toggle='tooltip' data-bs-placement='right' title='Показать пароль'><img src='./svg/eye.svg'></span>
+                                                            <span class='eye-closed input-group-text hidden' data-bs-toggle='tooltip' data-bs-placement='right' title='Скрыть пароль'><img src='./svg/eye-closed.svg'></span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                        <div class='button-container mb-4'>
+                                            <a id="" class="col-md-5 btn btn-primary me-3" role="button">Изменить пароль</a>
+                                            <a id="" class="col-md-4 btn d-flex flex-wrap align-content-center justify-content-center btn-outline-secondary disabled" role="button">Отменить</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="footer flex-row pb-2">
+                        <p>Если у Вас возникли вопросы — свяжитесь с командой <a href="">технической поддержки</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

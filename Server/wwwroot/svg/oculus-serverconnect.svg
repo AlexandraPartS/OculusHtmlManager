@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <clipPath id="clip-oculus-serverconnect">
+      <rect width="18" height="18"/>
+    </clipPath>
+  </defs>
+  <g id="oculus-serverconnect" clip-path="url(#clip-oculus-serverconnect)">
+    <g id="Сгруппировать_125" data-name="Сгруппировать 125" transform="translate(-3.269 1)">
+      <g id="iconfinder_SocialMedia_Website-Outline_2959741" transform="translate(4.269)">
+        <path id="Контур_8" data-name="Контур 8" d="M18,10.463A7.037,7.037,0,1,1,10.963,17.5,7.037,7.037,0,0,1,18,10.463M18,9.5a8,8,0,1,0,8,8,8,8,0,0,0-8-8Z" transform="translate(-10 -9.5)" stroke="#000" stroke-width="0.3"/>
+        <path id="Контур_9" data-name="Контур 9" d="M46.871,10.463c.293,0,.811.542,1.253,1.732a15.83,15.83,0,0,1,.807,5.305,15.689,15.689,0,0,1-.807,5.305c-.442,1.185-.958,1.732-1.253,1.732s-.811-.542-1.253-1.732a15.865,15.865,0,0,1-.807-5.305,15.689,15.689,0,0,1,.807-5.305c.443-1.191.961-1.732,1.253-1.732m0-.963c-1.641,0-2.971,3.582-2.971,8s1.33,8,2.971,8,2.971-3.582,2.971-8S48.513,9.5,46.871,9.5Z" transform="translate(-38.706 -9.5)" stroke="#000" stroke-width="0.3"/>
+        <g id="Прямоугольник_12" data-name="Прямоугольник 12" transform="translate(0.982 5.054)" stroke="#000" stroke-width="0.3">
+          <rect width="14.036" height="0.912" stroke="none"/>
+          <rect x="0.15" y="0.15" width="13.736" height="0.612" fill="none"/>
+        </g>
+        <g id="Прямоугольник_13" data-name="Прямоугольник 13" transform="translate(0.982 10.052)" stroke="#000" stroke-width="0.3">
+          <rect width="14.036" height="0.912" stroke="none"/>
+          <rect x="0.15" y="0.15" width="13.736" height="0.612" fill="none"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
